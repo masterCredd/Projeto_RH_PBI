@@ -137,8 +137,7 @@ Para cada linha, verifica se a coluna `[Colaborador]` não está vazia.
 O resultado final é o número de linhas que possuem um nome de colaborador
 preenchido.
 Em essência, é uma forma de contar o total de funcionários na sua base de dados.
-
-2.:arrow_right: Total de Desligamento
+2. :arrow_right: Total de Desligamento
 
 ```dax
 Desligamentos = CALCULATE([Admissoes],'Funcionários'[Desligado]IN{"Sim"})
@@ -149,8 +148,7 @@ foram desligados.
 Ela reutiliza a medida `[Admissoes]` (que conta todos os funcionários) e
 aplica um filtro para contar apenas aqueles marcados como `"Sim"` na coluna
 `[Desligado]`.
-
-3.:arrow_right Percentual de Turnover
+3. :arrow_right: Percentual de Turnover
 
 ```dax
 Turnover = DIVIDE([Desligamentos],[Admissoes],0)
@@ -166,10 +164,9 @@ retornando 0 caso não haja nenhuma admissão para calcular.
 O turnover é um indicador (geralmente uma porcentagem) que mede a taxa com que
 os funcionários deixam uma empresa em um determinado período.
 
-turnover=>  Desligamentos/ Admissoes
+turnover ⚓  Desligamentos / Admissoes
+4. :arrow_right: Total Folha
 
-**4.:arrow_right: Total Folha
-**
 ```dax
 Folha Salarial = SUMX('Funcionários','Funcionários'[Salário])
 ```
@@ -178,8 +175,7 @@ Esta fórmula cria uma medida chamada `Folha Salarial` que calcula o custo
 total da folha de pagamento.
 Ela faz isso percorrendo a tabela `'Funcionários'`, linha por linha, e somando o
 valor encontrado na coluna `[Salário]` de cada funcionário.
-
-5.:arrow_right: Headcount
+5. :arrow_right: Headcount
 
 ```dax
 Headcount = CALCULATE([Admissoes],NOT('Funcionários'[Desligado]IN{"Sim"}))
@@ -190,8 +186,7 @@ Esta fórmula cria uma medida chamada `Headcount` que calcula o número de
 funcionários ativos na empresa.
 Ela funciona pegando o número total de admissões `([Admissoes])` e aplicando um
 filtro para excluir todos os funcionários que foram desligados.
-
-6.:arrow_right: Salário Médio
+6. :arrow_right: Salário Médio
 
 ```dax
 Salario Medio = AVERAGEX('Funcionários','Funcionários'[Salário])
