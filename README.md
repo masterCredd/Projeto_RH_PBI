@@ -23,8 +23,7 @@ Importe dados da pasta Dados que conte as seguintes tabelas:
 
 ### Código de importação de Dados
 
-Param font
-:arrow_right: caminho_fonte={caminha independente da maquina usada}
+Param font :arrow_right:caminho_fonte={caminha independente da maquina usada}
 
 ```powerquery
 let
