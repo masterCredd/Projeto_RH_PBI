@@ -121,7 +121,7 @@ limpa e pronta para análise.
   
 ### Medidas Usadas
 
-1.:arrow_right: Total de Admissões
+1. :arrow_right: Total de Admissões
 
 ```dax
 Admissoes = COUNTAX('Funcionários','Funcionários'[Colaborador])
