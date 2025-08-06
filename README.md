@@ -168,8 +168,40 @@ os funcionários deixam uma empresa em um determinado período.
 
 turnover=>  Desligamentos/ Admissoes
 
-4.:arrow_right: Total Folha
-
+**4.:arrow_right: Total Folha
+**
 ```dax
 Folha Salarial = SUMX('Funcionários','Funcionários'[Salário])
 ```
+
+Esta fórmula cria uma medida chamada `Folha Salarial` que calcula o custo
+total da folha de pagamento.
+Ela faz isso percorrendo a tabela `'Funcionários'`, linha por linha, e somando o
+valor encontrado na coluna `[Salário]` de cada funcionário.
+
+5.:arrow_right: Headcount
+
+```dax
+Headcount = CALCULATE([Admissoes],NOT('Funcionários'[Desligado]IN{"Sim"}))
+
+```
+
+Esta fórmula cria uma medida chamada `Headcount` que calcula o número de
+funcionários ativos na empresa.
+Ela funciona pegando o número total de admissões `([Admissoes])` e aplicando um
+filtro para excluir todos os funcionários que foram desligados.
+
+6.:arrow_right: Salário Médio
+
+```dax
+Salario Medio = AVERAGEX('Funcionários','Funcionários'[Salário])
+```
+
+Esta fórmula cria uma medida chamada Salario Medio que calcula o salário médio
+de todos os funcionários.
+Ela funciona percorrendo a tabela 'Funcionários', linha por linha, e depois
+ calcula a média de todos os valores encontrados na coluna `[Salário]`.
+
+imagem do resultado final
+
+ ![alt text](image.png).
